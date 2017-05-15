@@ -18,7 +18,7 @@ topics =
     """Please inspect your SSL/TLS web server configuration using https://www.ssllabs.com/ssltest/ — Usually there is an issue with the intermediate certificate chain (incomplete) which often results in client side errors."""
 
 module.exports = (robot) ->
-  robot.respond /([a-zA-Z-]+)? ?([a-zA-Z0-9_-]+)?/i, (msg) ->
+  robot.respond /([a-zA-Z-]+)? ?([a-zA-Z0-9\.@_-]+)?/i, (msg) ->
     topic = msg.match[1]
     target = msg.match[2]
 
