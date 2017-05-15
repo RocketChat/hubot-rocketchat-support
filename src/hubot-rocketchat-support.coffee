@@ -2,9 +2,9 @@
 #   Support helper script for the official Rocket.Chat #support channel
 #
 # Commands:
-#   hubot support
-#   hubot support logging
-#   hubot support ssl frdmn
+#   SupportBot
+#   SupportBot logging
+#   SupportBot ssl frdmn
 #
 # Author:
 #   Jonas Friedmann <j@frd.mn>
@@ -18,7 +18,7 @@ topics =
     """Please inspect your SSL/TLS web server configuration using https://www.ssllabs.com/ssltest/ — Usually there is an issue with the intermediate certificate chain (incomplete) which often results in client side errors."""
 
 module.exports = (robot) ->
-  robot.respond /support ?([a-zA-Z-]+)? ?([a-zA-Z0-9_-]+)?/i, (msg) ->
+  robot.respond /([a-zA-Z-]+)? ?([a-zA-Z0-9_-]+)?/i, (msg) ->
     topic = msg.match[1]
     target = msg.match[2]
 
