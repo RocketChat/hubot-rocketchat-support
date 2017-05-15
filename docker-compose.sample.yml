@@ -1,0 +1,11 @@
+hubot:
+  image: rocketchat/hubot-rocketchat:latest
+  restart: unless-stopped
+  environment:
+    - ROCKETCHAT_URL=https://demo.rocket.chat
+    - ROCKETCHAT_ROOM=YourChannel
+    - ROCKETCHAT_USER=SupportBotName
+    - ROCKETCHAT_PASSWORD=BoT-PAsS-WoRd
+    - BOT_NAME=SupportBotName
+    - EXTERNAL_SCRIPTS=@rocket.chat/hubot-rocketchat-support
+    - TZ=/usr/share/zoneinfo/Europe/Berlin
