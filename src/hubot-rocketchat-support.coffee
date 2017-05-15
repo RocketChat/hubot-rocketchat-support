@@ -42,7 +42,7 @@ module.exports = (robot) ->
       return
 
     if !topics[topic]
-      msg.send "Couldn't find support topic \"" + topic + "\""
+      msg.send "Couldn't find support topic `" + topic + "`"
       return
 
     if topic && topics[topic]
