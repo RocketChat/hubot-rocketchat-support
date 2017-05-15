@@ -15,7 +15,7 @@ topics =
   deploy:
     """Which deployment method did you use to setup Rocket.Chat? Manual installation, Docker or any other cloud service?"""
   ssl:
-    """Please inspect your SSL/TLS web server configuration using https://www.ssllabs.com/ssltest/ —  Usually there is an issue with the intermediate certificate chain (incomplete) which often results in client side errors."""
+    """Please inspect your SSL/TLS web server configuration using https://www.ssllabs.com/ssltest/ — Usually there is an issue with the intermediate certificate chain (incomplete) which often results in client side errors."""
 
 module.exports = (robot) ->
   robot.respond /support ?([a-zA-Z-]+)? ?([a-zA-Z0-9_-]+)?/i, (msg) ->
