@@ -10,10 +10,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/frdmn/hubot-rocketchat-support.git"
+    "url": "git://github.com/rocket.chat/hubot-rocketchat-support.git"
   },
   "bugs": {
-    "url": "https://github.com/frdmn/hubot-rocketchat-support/issues"
+    "url": "https://github.com/rocket.chat/hubot-rocketchat-support/issues"
   },
   "dependencies": {
     "coffee-script": "~1.6"
@@ -32,7 +32,7 @@
   "scripts": {
     "test": "grunt test"
   },
-  "homepage": "https://github.com/frdmn/hubot-rocketchat-support#readme",
+  "homepage": "https://github.com/rocket.chat/hubot-rocketchat-support#readme",
   "directories": {
     "test": "test"
   }
