@@ -1,25 +1,23 @@
 {
-  "name": "hubot-rocketchat-support",
+  "name": "@rocket.chat/hubot-rocketchat-support",
   "description": "Support helper script for the official Rocket.Chat #support channel",
   "version": "0.0.1",
   "author": "Jonas Friedmann <j@frd.mn>",
   "license": "MIT",
-
-  "keywords": ["hubot","hubot-scripts"],
-
+  "keywords": [
+    "hubot",
+    "hubot-scripts"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/frdmn/hubot-rocketchat-support.git"
   },
-
   "bugs": {
     "url": "https://github.com/frdmn/hubot-rocketchat-support/issues"
   },
-
   "dependencies": {
     "coffee-script": "~1.6"
   },
-
   "devDependencies": {
     "mocha": "*",
     "chai": "*",
@@ -30,10 +28,12 @@
     "matchdep": "~0.1.2",
     "grunt-contrib-watch": "~0.5.3"
   },
-
   "main": "index.coffee",
-
   "scripts": {
     "test": "grunt test"
+  },
+  "homepage": "https://github.com/frdmn/hubot-rocketchat-support#readme",
+  "directories": {
+    "test": "test"
   }
 }
