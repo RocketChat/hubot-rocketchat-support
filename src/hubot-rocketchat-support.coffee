@@ -34,6 +34,6 @@ module.exports = (robot) ->
       answer = topics[topic]
 
     if target
-      answer = "@" + target + " " + answer
+      answer = "@" + target.replace('@', '') + " " + answer
 
     msg.send answer
