@@ -16,7 +16,8 @@
     "url": "https://github.com/rocket.chat/hubot-rocketchat-support/issues"
   },
   "dependencies": {
-    "coffee-script": "~1.6"
+    "coffee-script": "~1.6",
+    "pick-key": "^1.0.3"
   },
   "devDependencies": {
     "mocha": "*",

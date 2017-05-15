@@ -9,6 +9,8 @@
 # Author:
 #   Jonas Friedmann <j@frd.mn>
 
+pickRandom = require('pick-key');
+
 topics =
   logging:
     """Please raise the log level in your administartion UI (Admin -> Logs): `Loglevel: 2 - error, info and debug`, `show packet: true` and `show file and number: true`."""
@@ -23,7 +25,11 @@ module.exports = (robot) ->
     target = msg.match[2]
 
     if !topic
-      msg.send "Available support topics: " + Object.keys(topics).join(', ')
+      msg.send "Available support topics: `" + Object.keys(topics).join('`, `') + "`. For example:\n" +
+      """```
+      @#{msg.robot.name} #{pickRandom(topics)}
+      @#{msg.robot.name} #{pickRandom(topics)} @#{msg.message.user.name}
+      ```"""
       return
 
     if !topics[topic]
