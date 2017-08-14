@@ -38,8 +38,7 @@ module.exports = (robot) ->
 
     if !topic || !topics[topic]
       msg.send "Available support topics: `" + Object.keys(topics).join('`, `') + "`. For example:\n" +
-      """```
-      @#{msg.robot.name} #{pickRandom(topics)}
+      """```@#{msg.robot.name} #{pickRandom(topics)}
       @#{msg.robot.name} #{pickRandom(topics)} @#{msg.message.user.name}
       ```"""
       return
