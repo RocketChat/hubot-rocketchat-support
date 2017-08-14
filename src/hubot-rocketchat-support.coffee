@@ -33,16 +33,12 @@ module.exports = (robot) ->
     topic = msg.match[1]
     target = msg.match[2]
 
-    if !topic
+    if !topic || !topics[topic]
       msg.send "Available support topics: `" + Object.keys(topics).join('`, `') + "`. For example:\n" +
       """```
       @#{msg.robot.name} #{pickRandom(topics)}
       @#{msg.robot.name} #{pickRandom(topics)} @#{msg.message.user.name}
       ```"""
-      return
-
-    if !topics[topic]
-      msg.send "Couldn't find support topic `" + topic + "`"
       return
 
     if topic && topics[topic]
