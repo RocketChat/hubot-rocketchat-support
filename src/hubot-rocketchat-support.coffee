@@ -29,7 +29,7 @@ topics =
   ssl:
     """Please inspect your SSL/TLS web server configuration using https://www.ssllabs.com/ssltest/ — Usually there is an issue with the intermediate certificate chain (incomplete) which often results in client side errors."""
   themes:
-    """Themes are not fully supported yet and are a [work in progress](https://github.com/RocketChat/Rocket.Chat/issues/277) — At the moment you would need to customize the `rocketchat-theme` / `rocketchat-ui` package or create your own to avoide conflicts on eventual updates. More information: https://rocket.chat/docs/developer-guides/ui-and-theming/themes/"""
+    """Themes are not fully supported yet and are a [work in progress](https://github.com/RocketChat/Rocket.Chat/issues/277) — At the moment you would need to customize the `rocketchat-theme` / `rocketchat-ui` package or create your own to avoid conflicts on eventual updates. More information: https://rocket.chat/docs/developer-guides/ui-and-theming/themes/"""
 
 module.exports = (robot) ->
   robot.respond /([a-zA-Z-]+)? ?([a-zA-Z0-9\.@_-]+)?/i, (msg) ->
