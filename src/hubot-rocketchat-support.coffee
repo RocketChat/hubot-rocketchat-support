@@ -50,3 +50,6 @@ module.exports = (robot) ->
       answer = "@" + target.replace('@', '') + " " + answer
 
     msg.send answer
+
+  robot.hear /hosting/i, (msg) ->
+    msg.send "Please send all hosting or hosted instance inquiries to `cloud@rocket.chat`. This is a _community support_ channel. Thank you for your understanding."
