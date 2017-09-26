@@ -31,6 +31,15 @@ topics =
   themes:
     """Themes are not fully supported yet and are a [work in progress](https://github.com/RocketChat/Rocket.Chat/issues/277) — At the moment you would need to customize the `rocketchat-theme` / `rocketchat-ui` package or create your own to avoid conflicts on eventual updates. More information: https://rocket.chat/docs/developer-guides/ui-and-theming/themes/"""
 
+# Cooldown to prevent spam for "hosting" keyword response
+cooldownInMinutes = 3
+cooldown = null
+
+# Function to disable currently active cooldown
+disableCooldown = ->
+  cooldown = null
+  return
+
 module.exports = (robot) ->
   robot.respond /([a-zA-Z-]+)? ?([a-zA-Z0-9\.@_-]+)?/i, (msg) ->
     topic = msg.match[1]
@@ -53,3 +62,10 @@ module.exports = (robot) ->
 
   robot.hear /hosting/i, (msg) ->
     msg.send "Please send all hosting or hosted instance inquiries to `cloud@rocket.chat`. This is a _community support_ channel. Thank you for your understanding."
+    # Check if cooldown is currently active
+    if !cooldown
+      # If not, send message
+      msg.send "Please send all hosting or hosted instance inquiries to `cloud@rocket.chat`. This is a _community support_ channel. Thank you for your understanding."
+
+    # Activate cooldown
+    cooldown = setTimeout(disableCooldown, cooldownInMinutes * 60 * 1000)
