@@ -11,6 +11,7 @@
 
 pickRandom = require('pick-key');
 
+# Available support topics and responses
 topics =
   codeblocks:
     """To format/highlight code blocks you can use Markdown syntax like this: http://i.imgur.com/gjSrpht.png"""
@@ -41,10 +42,12 @@ disableCooldown = ->
   return
 
 module.exports = (robot) ->
+  # Respond to support topics
   robot.respond /([a-zA-Z-]+)? ?([a-zA-Z0-9\.@_-]+)?/i, (msg) ->
     topic = msg.match[1]
     target = msg.match[2]
 
+    # Check if topic is passed and if passed topic is defined in support topic object (above)
     if !topic || !topics[topic]
       msg.send "Available support topics: `" + Object.keys(topics).join('`, `') + "`. For example:\n" +
       """```@#{msg.robot.name} #{pickRandom(topics)}
@@ -52,16 +55,19 @@ module.exports = (robot) ->
       ```"""
       return
 
+    # If it does, Pick proper answer
     if topic && topics[topic]
       answer = topics[topic]
 
+    # If target was specified, prepend with @mention
     if target
       answer = "@" + target.replace('@', '') + " " + answer
 
+    # Send out answer
     msg.send answer
 
+  # Hear for "hosting" keyword
   robot.hear /hosting/i, (msg) ->
-    msg.send "Please send all hosting or hosted instance inquiries to `cloud@rocket.chat`. This is a _community support_ channel. Thank you for your understanding."
     # Check if cooldown is currently active
     if !cooldown
       # If not, send message
